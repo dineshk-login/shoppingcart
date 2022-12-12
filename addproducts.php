@@ -1,10 +1,5 @@
 <?php 
-session_start();
-$id = $_SESSION["userid"];
-if ( $id == "")
-{
-  header("Location:shoppingcartsignin.php"); 
-}else{
+include_once("sessionforlogin.php");
     include_once("db/config.php"); 
 if($_GET ){
     
@@ -18,7 +13,7 @@ if($_GET ){
   //echo $result;
   //die();
   }
-}?>
+?>
 
 
 <!DOCTYPE html>

@@ -1,10 +1,5 @@
 <?php 
-session_start();
-$id = $_SESSION["userid"];
-if ( $id == "")
-{
-  header("Location:shoppingcartsignin.php"); 
-}else{
+include_once("sessionforlogin.php");
     include_once("db/config.php"); 
 if($_POST ){
     $comment = $_POST['comments'];
@@ -39,7 +34,7 @@ if($_POST ){
   //echo $result;
   //die();
   }
-}?>
+?>
   <form action="" method="post">
   your comments<input type="text" name="comments">
   <input type="submit" value="submit">

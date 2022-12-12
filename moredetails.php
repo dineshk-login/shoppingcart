@@ -11,12 +11,7 @@ th, td {
 <table>
 <tr><td>name</td><td>Comments</td></tr>
 <?php 
-session_start();
-$id1 = $_SESSION["userid"];
-if ( $id1 == "")
-{
-  header("Location:shoppingcartsignin.php"); 
-}else{
+include_once("sessionforlogin.php");
   if($_GET){
 include_once("db/config.php");
 $id = $_GET['id'] ;
@@ -32,6 +27,6 @@ $sql = "SELECT user.name , review.comments FROM user LEFT JOIN review ON user.us
 <?php
 }
 }
-}
+
 ?>
 </table>

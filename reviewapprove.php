@@ -1,10 +1,5 @@
 <?php
-session_start();
-$id = $_SESSION["userid"];
-if ( $id == "")
-{
-  header("Location:shoppingcartsignin.php"); 
-}else{
+include_once("sessionforlogin.php");
 if($_GET){
 include_once("db/config.php");
 	$userid = $_GET['userid'];
@@ -16,6 +11,5 @@ if($value==1){
 }
 
 	header("Location:shoppingcartadmindashboard.php");
-}
 }
 ?>

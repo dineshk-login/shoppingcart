@@ -2,7 +2,6 @@
 include_once("db/config.php"); 
 $response = "";
 if($_GET){
-	
   $name=$_GET['name'];
   $password=$_GET['password'];
   $city = $_GET['city'];

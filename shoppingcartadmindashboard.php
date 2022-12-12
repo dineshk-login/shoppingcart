@@ -13,12 +13,7 @@ th, td {
 <table>
 <tr><td>userid</td><td>productid</td><td>name</td><td>Comments</td><td>approve/regect</td></tr>
 <?php 
-session_start();
-$id = $_SESSION["userid"];
-if ( $id == "")
-{
-  header("Location:shoppingcartsignin.php"); 
-}else{
+include_once("sessionforlogin.php");
 include_once("db/config.php");
 //$userid = $_SESSION['userid'];
 
@@ -40,7 +35,7 @@ $sql = "SELECT * FROM review WHERE status = 0 ";
 
 <?php
 }
-}
+
 ?>
 </table>
 <center><a href="dashboard.php">back</a></center>

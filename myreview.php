@@ -11,12 +11,7 @@ th, td {
 <table>
 <tr><td>name</td><td>Comments</td></tr>
 <?php 
-session_start();
-$id = $_SESSION["userid"];
-if ( $id == "")
-{
-  header("Location:shoppingcartsignin.php"); 
-}else{
+include_once("sessionforlogin.php");
 include_once("db/config.php");
 $id =  $_SESSION['userid'] ;
  //$sql="SELECT * FROM review.comment , user.name WHERE productid = $id AND status = 1";
@@ -30,7 +25,7 @@ $sql = "SELECT * FROM review WHERE userid=$id;";
   <td><?php echo $res['comments']  ?></td></tr>
 <?php
 }
-}
+
 ?>
 </table>
 <center><a href="dashboard.php">back</a></center>

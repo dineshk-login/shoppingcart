@@ -14,12 +14,7 @@ a{text-decoration: none;}
 <table>
 <tr><td>Product id</td><td>Product name</td><td>Price</td><td>Details</td><td>Reviewproduct</td> </tr>
 <?php 
-session_start();
-$id = $_SESSION["userid"];
-if ( $id == "")
-{
-  header("Location:shoppingcartsignin.php"); 
-}else{
+include_once("sessionforlogin.php");
 include_once("db/config.php"); 
 $id =  $_SESSION['userid'];
  $sql="SELECT * FROM product" ;
@@ -38,7 +33,7 @@ $result1=mysqli_query($mysqli,$sql);
 </tr>
 <?php
 }
-}
+
 ?>
 </table>
 <center><a href="shoppingcartlogout.php">logout</a></center>
